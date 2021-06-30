@@ -14,15 +14,15 @@ export default function Weather() {
             />
           </div>
           <div className="col-3">
-            <input type="submit" value="Search" className="btn" />
+            <input type="submit" value="Search" className="btn search-button" />
           </div>
         </div>
       </form>
-      <p>Saturday 15:00</p>
+      <p className="current-date">Saturday 15:00</p>
       <div className="current-weather">
         <h1 className="current-city">Krakow</h1>
-        <p className="current-temp">20°C|°F</p>
-        <ul>
+        <p className="current-temp">20°C</p>
+        <ul className="current-weather-props">
           <li className="current-description row">
             <div className="col-1">☀️</div>
             <div className="col-11">Clear sky</div>

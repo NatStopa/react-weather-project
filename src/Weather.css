@@ -1,4 +1,44 @@
+.search-button {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+}
+
 .Weather {
-  border: 1px solid black;
-  border-radius: 5px;
+  background-image: linear-gradient(#000647, #3a4aff, #a371ff, #ffa4c0);
+  border: 1px;
+  border-radius: 10px;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 500px;
+}
+
+.current-city {
+  font-size: 50px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.current-city,
+.current-temp {
+  text-align: center;
+}
+
+.current-date {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.current-temp {
+  font-size: 100px;
+  margin-top: 0;
+}
+
+.current-weather-props {
+  font-size: 20px;
+  padding: 0;
+  margin-left: 5px;
 }
