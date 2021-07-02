@@ -10,7 +10,7 @@ export default function Weather() {
             <input
               type="search"
               placeholder="Enter a city..."
-              className="form-control"
+              className="form-control city-input"
             />
           </div>
           <div className="col-3">
@@ -21,7 +21,7 @@ export default function Weather() {
       <p className="current-date">Saturday 15:00</p>
       <div className="current-weather">
         <h1 className="current-city">Krakow</h1>
-        <p className="current-temp">20°C</p>
+        <p className="current-temp">20°</p>
         <ul className="current-weather-props">
           <li className="current-description row">
             <div className="col-1">☀️</div>
