@@ -1,3 +1,7 @@
+strong {
+  font-weight: 500;
+}
+
 .city-input,
 .city-input:hover,
 .city-input:active,
@@ -37,13 +41,12 @@
 
 .current-city {
   font-size: 50px;
+  font-weight: 200;
   margin-top: 40px;
   margin-bottom: 0;
 }
 
-.current-city,
-.current-temp {
-  font-weight: 200;
+.current-weather {
   text-align: center;
 }
 
@@ -55,15 +58,22 @@
 
 .current-temp {
   font-size: 100px;
-  margin-top: 0;
+  font-weight: 100;
+  letter-spacing: -7px;
+  margin: 0;
 }
 
 .current-weather-props {
   font-size: 20px;
+  line-height: 40px;
   padding: 0;
   margin-left: 5px;
 }
 
 .city-input::placeholder {
   color: #2d2741;
+}
+
+.description-icons {
+  width: 35px;
 }
