@@ -29,7 +29,7 @@ export default function Weather() {
       </div>
       <hr />
       <div className="row">
-        <ul className="current-weather-props col-7">
+        <ul className="current-weather-props col-6">
           <li className="current-description row">
             <div className="col-3">
               <img
@@ -61,7 +61,7 @@ export default function Weather() {
             <div className="col-9">3km/h</div>
           </li>
         </ul>
-        <ul className="current-weather-props col-4">
+        <ul className="current-weather-props col-5">
           <li className="row">
             <strong className="col-4">Max</strong>
             <div className="col-8">25°</div>

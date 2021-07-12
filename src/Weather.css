@@ -2,13 +2,58 @@ strong {
   font-weight: 500;
 }
 
-.city-input,
+.city-input {
+  background-color: #6a6288;
+  border: 1px solid #6a6288;
+  box-shadow: 1px 1px 10px #6a6288;
+}
+
 .city-input:hover,
 .city-input:active,
 .city-input:focus {
   background-color: #6a6288;
   border: 1px solid #6a6288;
-  box-shadow: 1px 1px 10px #6a6288;
+  box-shadow: 1px 1px 15px #fbf7bf;
+  transition: all 1s ease-in-out;
+}
+
+.city-input::placeholder {
+  color: #2d2741;
+}
+
+.current-city {
+  font-size: 50px;
+  font-weight: 200;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.current-date {
+  font-size: 25px;
+  margin: 5px;
+  margin-top: 20px;
+}
+
+.current-temp {
+  font-size: 100px;
+  font-weight: 100;
+  letter-spacing: -7px;
+  margin: 0;
+}
+
+.current-weather {
+  text-align: center;
+}
+
+.current-weather-props {
+  font-size: 20px;
+  line-height: 40px;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.description-icons {
+  width: 35px;
 }
 
 .search-button {
@@ -16,6 +61,12 @@ strong {
   box-shadow: 1px 1px 10px #6a6288;
   color: black;
   font-weight: 500;
+}
+
+.search-button:hover,
+.search-button:active {
+  box-shadow: 1px 1px 15px #fbf7bf;
+  transition: all 1s ease-in-out;
 }
 
 .Weather {
@@ -37,43 +88,4 @@ strong {
   margin-bottom: 10px;
   padding: 20px;
   width: 500px;
-}
-
-.current-city {
-  font-size: 50px;
-  font-weight: 200;
-  margin-top: 40px;
-  margin-bottom: 0;
-}
-
-.current-weather {
-  text-align: center;
-}
-
-.current-date {
-  font-size: 25px;
-  margin: 5px;
-  margin-top: 20px;
-}
-
-.current-temp {
-  font-size: 100px;
-  font-weight: 100;
-  letter-spacing: -7px;
-  margin: 0;
-}
-
-.current-weather-props {
-  font-size: 20px;
-  line-height: 40px;
-  padding: 0;
-  margin-left: 5px;
-}
-
-.city-input::placeholder {
-  color: #2d2741;
-}
-
-.description-icons {
-  width: 35px;
 }
