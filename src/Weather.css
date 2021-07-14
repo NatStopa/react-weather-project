@@ -1,3 +1,9 @@
+.loader {
+  margin-bottom: 160px;
+  margin-top: 200px;
+  text-align: center;
+}
+
 strong {
   font-weight: 500;
 }
