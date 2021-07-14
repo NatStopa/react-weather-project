@@ -4,6 +4,8 @@ import "./Weather.css";
 import humidityicon from "./humidity.png";
 import weathericon from "./sun.png";
 import windicon from "./windsock.png";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -18,7 +20,6 @@ export default function Weather(props) {
       max: response.data.main.temp_max,
       min: response.data.main.temp_min,
     });
-    console.log(response);
   }
 
   if (weatherData.ready) {
@@ -102,6 +103,14 @@ export default function Weather(props) {
     let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
-    return "Loading...";
+    return (
+      <Loader
+        type="Grid"
+        color="#2d2741"
+        height={500}
+        width={500}
+        timeout={3000}
+      />
+    );
   }
 }
