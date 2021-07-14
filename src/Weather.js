@@ -1,77 +1,107 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Weather.css";
 import humidityicon from "./humidity.png";
 import weathericon from "./sun.png";
 import windicon from "./windsock.png";
 
-export default function Weather() {
-  return (
-    <div className="Weather">
-      <form>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a city..."
-              className="form-control city-input"
-            />
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      city: response.data.name,
+      temp: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      max: response.data.main.temp_max,
+      min: response.data.main.temp_min,
+    });
+    console.log(response);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city..."
+                className="form-control city-input"
+              />
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn search-button"
+              />
+            </div>
           </div>
-          <div className="col-3">
-            <input type="submit" value="Search" className="btn search-button" />
-          </div>
+        </form>
+        <p className="current-date">Saturday 15:00</p>
+        <hr />
+        <div className="current-weather">
+          <h1 className="current-city">{weatherData.city}</h1>
+          <p className="current-temp">{Math.round(weatherData.temp)}°C</p>
         </div>
-      </form>
-      <p className="current-date">Saturday 15:00</p>
-      <hr />
-      <div className="current-weather">
-        <h1 className="current-city">Los Angeles</h1>
-        <p className="current-temp">20°</p>
+        <hr />
+        <div className="row">
+          <ul className="current-weather-props col-6">
+            <li className="current-description row">
+              <div className="col-3">
+                <img
+                  src={weathericon}
+                  alt="weather icon"
+                  className="description-icons"
+                />
+              </div>
+              <div className="col-9 text-capitalize">
+                {weatherData.description}
+              </div>
+            </li>
+            <li className="humidity row">
+              <div className="col-3">
+                <img
+                  src={humidityicon}
+                  alt="humidity icon"
+                  className="description-icons"
+                />
+              </div>
+              <div className="col-9">{weatherData.humidity}%</div>
+            </li>
+            <li className="wind row">
+              <div className="col-3">
+                <img
+                  src={windicon}
+                  alt="wind icon"
+                  className="description-icons"
+                />
+              </div>
+              <div className="col-9">{Math.round(weatherData.wind)}km/h</div>
+            </li>
+          </ul>
+          <ul className="current-weather-props col-5">
+            <li className="row">
+              <strong className="col-4">Max</strong>
+              <div className="col-8">{Math.round(weatherData.max)}°</div>
+            </li>
+            <li className="row">
+              <strong className="col-4">Min</strong>
+              <div className="col-8">{Math.round(weatherData.min)}°</div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <hr />
-      <div className="row">
-        <ul className="current-weather-props col-6">
-          <li className="current-description row">
-            <div className="col-3">
-              <img
-                src={weathericon}
-                alt="weather icon"
-                className="description-icons"
-              />
-            </div>
-            <div className="col-9">Clear sky</div>
-          </li>
-          <li className="humidity row">
-            <div className="col-3">
-              <img
-                src={humidityicon}
-                alt="humidity icon"
-                className="description-icons"
-              />
-            </div>
-            <div className="col-9">60%</div>
-          </li>
-          <li className="wind row">
-            <div className="col-3">
-              <img
-                src={windicon}
-                alt="wind icon"
-                className="description-icons"
-              />
-            </div>
-            <div className="col-9">3km/h</div>
-          </li>
-        </ul>
-        <ul className="current-weather-props col-5">
-          <li className="row">
-            <strong className="col-4">Max</strong>
-            <div className="col-8">25°</div>
-          </li>
-          <li className="row">
-            <strong className="col-4">Min</strong>
-            <div className="col-8">19°</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "02ae2bfab4b783181c5ec4a0935ec345";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
+  }
 }

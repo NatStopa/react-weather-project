@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="Krakow" />
         <footer>
           Coded by NatStopa, open-sourced on{" "}
           <a
