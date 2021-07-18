@@ -68,10 +68,10 @@ export default function Weather(props) {
     return (
       <div className="loader">
         <Loader
-          type="Grid"
+          type="Puff"
           color="#2d2741"
-          height={250}
-          width={250}
+          height={80}
+          width={80}
           timeout={3000}
         />
       </div>
