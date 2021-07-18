@@ -1,8 +1,7 @@
 import React from "react";
 import FormatDate from "./FormatDate";
 import humidityicon from "./humidity.png";
-import weathericon from "./sun.png";
-import windicon from "./windsock.png";
+import windicon from "./wind.png";
 
 export default function WeatherInfo(props) {
   return (
@@ -21,7 +20,7 @@ export default function WeatherInfo(props) {
           <li className="current-description row">
             <div className="col-3 icons">
               <img
-                src={weathericon}
+                src={require(`./weather_icons/${props.data.icon}.png`).default}
                 alt="weather icon"
                 className="description-icons"
               />
