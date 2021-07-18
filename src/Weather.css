@@ -35,7 +35,7 @@ strong {
 }
 
 .current-date {
-  font-size: 25px;
+  font-size: 23px;
   margin: 5px;
   margin-top: 20px;
 }
@@ -60,6 +60,12 @@ strong {
 
 .description-icons {
   width: 35px;
+}
+
+.icons {
+  margin-left: 5px;
+  padding-right: 0;
+  width: 50px;
 }
 
 .search-button {
