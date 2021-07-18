@@ -13,7 +13,7 @@ export default function WeatherInfo(props) {
       <hr />
       <div className="current-weather">
         <h1 className="current-city">{props.data.city}</h1>
-        <p className="current-temp">{Math.round(props.data.temp)}°C</p>
+        <p className="current-temp">{Math.round(props.data.temp)}°</p>
       </div>
       <hr />
       <div className="row">
