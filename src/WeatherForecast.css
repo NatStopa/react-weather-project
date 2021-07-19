@@ -1,0 +1,25 @@
+.WeatherForecast ul {
+  font-size: 20px;
+  margin-left: 15px;
+  padding: 0;
+}
+
+.forecast-icons {
+  width: 27px;
+}
+
+.WeatherForecast-info {
+  margin-bottom: 10px;
+  max-width: 450px;
+}
+
+.WeatherForecast-temp-max {
+  max-width: 69px;
+  opacity: 0.8;
+  padding-right: 0;
+}
+
+.WeatherForecast-temp-min {
+  opacity: 0.5;
+  padding: 0;
+}

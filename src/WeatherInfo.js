@@ -2,6 +2,7 @@ import React from "react";
 import FormatDate from "./FormatDate";
 import humidityicon from "./humidity.png";
 import windicon from "./wind.png";
+import "./Weather.css";
 
 export default function WeatherInfo(props) {
   return (
