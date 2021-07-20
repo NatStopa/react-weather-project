@@ -21,6 +21,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       max: response.data.main.temp_max,
       min: response.data.main.temp_min,
+      coordinates: response.data.coord,
     });
   }
 
@@ -63,7 +64,7 @@ export default function Weather(props) {
         </form>
         <WeatherInfo data={weatherData} />
         <hr />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
