@@ -17,7 +17,7 @@ export default function WeatherInfo(props) {
       </div>
       <hr />
       <div className="row">
-        <ul className="current-weather-props col-7">
+        <ul className="current-weather-props col-6">
           <li className="current-description row">
             <div className="col-3 icons">
               <img

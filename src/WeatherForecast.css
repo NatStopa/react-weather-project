@@ -8,9 +8,12 @@
   width: 27px;
 }
 
+.WeatherForecast-day {
+  width: 243px;
+}
+
 .WeatherForecast-info {
   margin-bottom: 10px;
-  max-width: 450px;
 }
 
 .WeatherForecast-temp-max {
